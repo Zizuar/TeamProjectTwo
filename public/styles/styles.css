@@ -1,3 +1,21 @@
 .list-group-item {
   line-height: 2.5;
 }
+body{
+  background-image: url("/img/home.bg.jpg");
+  font-family: 'Montserrat', sans-serif;
+}
+.start-button{
+  background-color: black !important
+}
+.header{
+  text-align: center;
+  font-size: 50px;
+}
+.intro{
+  font-size: 40px;
+}
+.centered{
+  display: flex;
+  justify-content:center
+}
