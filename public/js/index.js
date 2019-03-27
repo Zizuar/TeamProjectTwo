@@ -1,105 +1,81 @@
+
+
+
+
 // Get references to page elements
-// var $exampleText = $("#example-text");
-// var $exampleDescription = $("#example-description");
-// var $submitBtn = $("#submit");
-// var $exampleList = $("#example-list");
+$(document).ready(function() {
+var $genderPreference = $("#gender");
+var $firstName = $("#first_name");
+var $email = $("#email");
+var $password = $("#password");
+var $age = $("#age");
+var $zipCode = $("#zipCode");
+var $submitBtn = $("#submitBtn");
 
-// The API object contains methods for each kind of request we'll make
 
-$(document).ready(function(){
+  
   $('.modal').modal();
   $('select').formSelect();
+  $('input#input_text, textarea#textarea2').characterCounter();
+  $('.sidenav').sidenav();
+
+var API = {
+  createAccount: function (user) {
+    return $.ajax({
+      type: "POST",
+      url: "api/users",
+      data: JSON.stringify(user)
+    });
+  },
+  // getUsers: function () {
+  //   return $.ajax({
+  //     url: "api/users",
+  //     type: "GET"
+  //   });
+  // }
+}
+
+var userformSubmit = function (event) {
+  event.preventDefault();
+  var user = {
+    gender: $genderPreference.val(),
+    name: $firstName.val(),
+    email: $email.val(),
+    password: $password.val(),
+    zipCode: $zipCode.val(),
+    age: $age.val()
+  };
+  
+  
+  // if (user.gender && user.name && user.$email && user.password && user.zipCode === null||undefined||0) {
+  //   alert("You must enter info!");
+  //   return;
+  // }
+
+  API.createAccount(user).then(function () { 
+    // window.location.href="/*" 
+    if (user.gender || user.age == null){
+      M.toast({html: 'Please put your info!', classes: 'rounded'})
+    }
+    if (user.name || user.email || user.password || user.zipCode == " "){
+      M.toast({html: 'Please put your info!', classes: 'rounded'})
+    }
+    console.log(user.gender);
+    console.log(user.name);
+    console.log(user.email);
+    console.log(user.password);
+    console.log(user.zipCode);
+    console.log(user.age);
+  });
+
+  // $genderPreference.val(" ");
+  // $firstName.val(" ");
+  // $email.val(" ");
+  // $password.val(" ");
+  // $zipCode.val(" ");
+
+};
+
+$submitBtn.on("click", userformSubmit);
+
 });
-
-// var API = {
-//   saveExample: function(example) {
-//     return $.ajax({
-//       headers: {
-//         "Content-Type": "application/json"
-//       },
-//       type: "POST",
-//       url: "api/examples",
-//       data: JSON.stringify(example)
-//     });
-//   },
-//   getExamples: function() {
-//     return $.ajax({
-//       url: "api/examples",
-//       type: "GET"
-//     });
-//   },
-//   deleteExample: function(id) {
-//     return $.ajax({
-//       url: "api/examples/" + id,
-//       type: "DELETE"
-//     });
-//   }
-// };
-
-// // refreshExamples gets new examples from the db and repopulates the list
-// var refreshExamples = function() {
-//   API.getExamples().then(function(data) {
-//     var $examples = data.map(function(example) {
-//       var $a = $("<a>")
-//         .text(example.text)
-//         .attr("href", "/example/" + example.id);
-
-//       var $li = $("<li>")
-//         .attr({
-//           class: "list-group-item",
-//           "data-id": example.id
-//         })
-//         .append($a);
-
-//       var $button = $("<button>")
-//         .addClass("btn btn-danger float-right delete")
-//         .text("ｘ");
-
-//       $li.append($button);
-
-//       return $li;
-//     });
-
-//     $exampleList.empty();
-//     $exampleList.append($examples);
-//   });
-// };
-
-// // handleFormSubmit is called whenever we submit a new example
-// // Save the new example to the db and refresh the list
-// var handleFormSubmit = function(event) {
-//   event.preventDefault();
-
-//   var example = {
-//     text: $exampleText.val().trim(),
-//     description: $exampleDescription.val().trim()
-//   };
-
-//   if (!(example.text && example.description)) {
-//     alert("You must enter an example text and description!");
-//     return;
-//   }
-
-//   API.saveExample(example).then(function() {
-//     refreshExamples();
-//   });
-
-//   $exampleText.val("");
-//   $exampleDescription.val("");
-// };
-
-// // handleDeleteBtnClick is called when an example's delete button is clicked
-// // Remove the example from the db and refresh the list
-// var handleDeleteBtnClick = function() {
-//   var idToDelete = $(this)
-//     .parent()
-//     .attr("data-id");
-
-//   API.deleteExample(idToDelete).then(function() {
-//     refreshExamples();
-//   });
-// };
-
-// // Add event listeners to the submit and delete buttons
-// $submitBtn.on("click", handleFormSubmit);
-// $exampleList.on("click", ".delete", handleDeleteBtnClick);

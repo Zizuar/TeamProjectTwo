@@ -2,20 +2,18 @@
   line-height: 2.5;
 }
 body{
-  background-image: url("/img/home.bg.jpg");
-  font-family: 'Montserrat', sans-serif;
-}
-.start-button{
-  background-color: black !important
+  font-family: 'Arapey', serif;
 }
 .header{
   text-align: center;
   font-size: 50px;
 }
-.intro{
-  font-size: 40px;
-}
 .centered{
   display: flex;
   justify-content:center
+}
+#modal1.modal.open{
+ max-height:100% !important;
+ width: 450px;
+ border-radius: 20px;
 }
