@@ -1,0 +1,93 @@
+body{
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    background-image: url("/img/home.bg.jpg");
+    background-repeat:no-repeat;
+    -webkit-background-size:cover;
+    -moz-background-size:cover;
+    -o-background-size:cover;
+    background-size:cover;    
+    font-family: 'Arapey', serif;
+    
+}
+.modal-footer{
+    display: flex;
+    justify-content: center;
+}
+.modalHeader{
+    text-align: center;
+    font-size: 30px;
+}
+.navBar{
+   margin-top: 35px;
+    margin-left: 150px;
+    margin-right: 150px;
+}
+.submitBtn{
+    background-image: linear-gradient(to bottom right, red, yellow) !important;
+    background-color: red !important;
+    border-radius: 30px;
+    color: black;
+    animation-delay: 2s;
+}
+.submitBtn:hover{
+    color: white;
+}
+.brand-logo{
+    font-size: 60px !important;
+}
+.brand-logo:hover{
+    color: orange;
+}
+.uploadBtn{
+    background-image: linear-gradient(to bottom right, red, yellow) !important;
+    background-color: red !important;
+    border-radius: 30px;
+    color: black;
+
+}
+.uploadBtn:hover{
+    color: white;
+}
+.start-button{
+    background-image: linear-gradient(to bottom right, red, yellow) !important;
+    background-color: red !important;
+    margin-top: 80px;
+    border-radius: 30px;
+    color: black
+}
+.start-button:hover{
+    color: white;
+}
+.intro{
+    margin-top: 80px;
+    font-size: 70px;
+    color: white;
+   
+}
+.input-field input[type=text]:focus {
+    border-bottom: 1px solid #000;
+    box-shadow: 0 1px 0 0 #000;
+}
+.input-field input[type=text].invalid {
+    border-bottom: 1px solid red !important;
+    box-shadow: 0 1px 0 0 red !important;
+    color: red !important
+  }
+ .input-field input[type=text]:focus + label {
+    color: lightcoral !important;
+  }
+.browser-default.validate{
+    border-radius: 30px !important;
+}
+main {
+    flex: 1 0 auto;
+}
+.page-footer{
+    background-color: orange !important;
+    text-align: center;
+}
+.meet{
+    float: left;
+}
