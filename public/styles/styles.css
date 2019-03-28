@@ -17,3 +17,15 @@ body{
  width: 450px;
  border-radius: 20px;
 }
+.oops{
+  font-size: 150px;
+  margin-left: 300px;
+}
+.error{
+  margin-left: 150px;
+}
+.backHome{
+  margin-left: 420px;
+  background-image: linear-gradient(to bottom right, red, yellow) !important;
+  border-radius: 30px;
+}

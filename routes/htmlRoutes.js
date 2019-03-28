@@ -6,10 +6,10 @@ module.exports = function(app) {
       res.render("index")        
    });
   // Load example page and pass in an example by id
-  app.get("/matches", function(req, res) {
+  app.get("/matches/:age/:zipcode/:gender", function(req, res) {
     // edit the checking here
     db.Example.findAll({ where: { id: req.params.id } }).then(function(dbMatch) {
-      res.render("result",{
+      res.render("matches",{
         results: dbMatch
       });
     });
