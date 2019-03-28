@@ -1,3 +1,6 @@
+DROP DATABASE IF EXISTS friendfinderdb;
+CREATE DATABASE friendfinderdb;
+
 DROP DATABASE IF EXISTS exampledb;
 CREATE DATABASE exampledb;
 
