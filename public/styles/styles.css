@@ -1,3 +1,19 @@
 .list-group-item {
   line-height: 2.5;
 }
+body{
+  font-family: 'Arapey', serif;
+}
+.header{
+  text-align: center;
+  font-size: 50px;
+}
+.centered{
+  display: flex;
+  justify-content:center
+}
+#modal1.modal.open{
+ max-height:100% !important;
+ width: 450px;
+ border-radius: 20px;
+}
