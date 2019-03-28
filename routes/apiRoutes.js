@@ -9,6 +9,8 @@ module.exports = function(app) {
   //   // });
   //   res.json({test})
   // });
+
+  // Need to pass into a get for query
   Friend.findAll({
     where: {
       gender: req.params.genderPreference,
