@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-    var Friend = sequelize.define("friend", {
+    var Match = sequelize.define("Match", {
       name: DataTypes.STRING,
       photo: DataTypes.STRING,
       email: DataTypes.STRING,
@@ -7,9 +7,9 @@ module.exports = function(sequelize, DataTypes) {
       zip: DataTypes.MEDIUMINT,
       gender: DataTypes.ENUM("M","F"),
       password: DataTypes.STRING,
-      created_at: DataTypes.DATETIME,
-      last_login: DataTypes.DATETIME,
+      created_at: DataTypes.DATE,
+      last_login: DataTypes.DATE,
       preference: DataTypes. INTEGER, 
     });
-    return friend;
+    return Match;
   };

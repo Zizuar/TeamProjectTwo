@@ -10,25 +10,25 @@ module.exports = function(app) {
   //   });
   // });
 
-  app.get("/api/friend", function(req, res) {
+  app.get("/api/match", function(req, res) {
   
     
-    db.Friend.findAll({}).then(function(dbfriendfinder) {
-      res.json(dbfriendfinder);
+    db.Friend.findAll({}).then(function(dbmatchfinder) {
+      res.json(dbmatchfinder);
     });
   });
 
   // Create a new example
-  app.post("/api/friend", function(req, res) {
-    db.Friend.create(req.body).then(function(dbfriendfinder) {
-      res.json(dbfriendfinder);
+  app.post("/api/match", function(req, res) {
+    db.Friend.create(req.body).then(function(dbmatchfinder) {
+      res.json(dbmatchfinder);
     });
   });
 
   // Delete an example by id
-  app.delete("/api/friend/:id", function(req, res) {
+  app.delete("/api/match/:id", function(req, res) {
     db.Friend.destroy({ where: { id: req.params.id } }).then(function(dbfriendfinder) {
-      res.json(dbfriendfinder);
+      res.json(dbmatchfinder);
     });
   });
 };

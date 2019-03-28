@@ -1,4 +1,4 @@
-DROP DATABASE IF EXISTS friendfinderdb;
-CREATE DATABASE friendfinderdb;
+DROP DATABASE IF EXISTS matchfinderdb;
+CREATE DATABASE matchfinderdb;
 
   
