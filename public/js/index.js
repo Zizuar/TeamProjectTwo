@@ -18,7 +18,7 @@ var API = {
   createAccount: function (user) {
     return $.ajax({
       type: "POST",
-      url: "api/users",
+      url: "api/match",
       data: JSON.stringify(user)
     });
   },
@@ -34,15 +34,13 @@ var userformSubmit = function (event) {
     zipCode: $zipCode.val(),
     age: $age.val()
   };
+console.log(user);
+  if (user.gender === null || user.age === null || user.name === " " || user.email === " " || user.password === " " || user.zipCode == " "){
+    return M.toast({html: 'Please put your info!', classes: 'rounded'})
+  }
   
   API.createAccount(user).then(function () { 
     // window.location.href="/*" 
-    if (user.gender || user.age == null){
-      M.toast({html: 'Please put your info!', classes: 'rounded'})
-    }
-    if (user.name || user.email || user.password || user.zipCode == " "){
-      M.toast({html: 'Please put your info!', classes: 'rounded'})
-    }
     console.log(user.gender);
     console.log(user.name);
     console.log(user.email);
