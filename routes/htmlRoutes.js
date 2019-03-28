@@ -1,23 +1,21 @@
 var db = require("../models");
 
-module.exports = function(app) {
+module.exports = function (app) {
   // Load index page
-  app.get("/", function(req, res) {
+  app.get("/", function (req, res) {
     res.render("index");
   });
   // Load example page and pass in an example by id
-  app.get("/matches/:age/:zipcode/:gender", function(req, res) {
+  app.get("/matches/:age/:zipcode/:gender", function (req, res) {
     // edit the checking here
-    db.Example.findAll({ where: { id: req.params.id } }).then(function(
-      dbMatch
-    ) {
+    db.Example.findAll({ where: { id: req.params.id } }).then(function (dbMatch) {
       res.render("matches", {
         results: dbMatch
       });
     });
   });
   // Render 404 page for any unmatched routes
-  app.get("*", function(req, res) {
+  app.get("*", function (req, res) {
     res.render("404");
   });
 };

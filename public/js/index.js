@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-=======
-
-
-
 
 // Get references to page elements
 $(document).ready(function() {
@@ -14,11 +9,9 @@ var $age = $("#age");
 var $zipCode = $("#zipCode");
 var $submitBtn = $("#submitBtn");
 
-
-  
-  $('.modal').modal();
   $('select').formSelect();
   $('input#input_text, textarea#textarea2').characterCounter();
+  $('.modal').modal();
   $('.sidenav').sidenav();
 
 var API = {
@@ -29,12 +22,6 @@ var API = {
       data: JSON.stringify(user)
     });
   },
-  // getUsers: function () {
-  //   return $.ajax({
-  //     url: "api/users",
-  //     type: "GET"
-  //   });
-  // }
 }
 
 var userformSubmit = function (event) {
@@ -48,12 +35,6 @@ var userformSubmit = function (event) {
     age: $age.val()
   };
   
-  
-  // if (user.gender && user.name && user.$email && user.password && user.zipCode === null||undefined||0) {
-  //   alert("You must enter info!");
-  //   return;
-  // }
-
   API.createAccount(user).then(function () { 
     // window.location.href="/*" 
     if (user.gender || user.age == null){
@@ -81,4 +62,4 @@ var userformSubmit = function (event) {
 $submitBtn.on("click", userformSubmit);
 
 });
->>>>>>> 6cddb0e35987b3122b04e383b70f2a8abdbf6ff4
+

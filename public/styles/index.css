@@ -27,7 +27,6 @@ body{
 .submitBtn{
     background-image: linear-gradient(to bottom right, red, yellow) !important;
     background-color: red !important;
-    border-radius: 30px;
     color: black;
     animation-delay: 2s;
 }
@@ -42,8 +41,7 @@ body{
 }
 .uploadBtn{
     background-image: linear-gradient(to bottom right, red, yellow) !important;
-    background-color: red !important;
-    border-radius: 30px;
+    background-color: red !important;  
     color: black;
 
 }
@@ -54,7 +52,7 @@ body{
     background-image: linear-gradient(to bottom right, red, yellow) !important;
     background-color: red !important;
     margin-top: 80px;
-    border-radius: 30px;
+   
     color: black
 }
 .start-button:hover{
@@ -78,9 +76,6 @@ body{
  .input-field input[type=text]:focus + label {
     color: lightcoral !important;
   }
-.browser-default.validate{
-    border-radius: 30px !important;
-}
 main {
     flex: 1 0 auto;
 }
