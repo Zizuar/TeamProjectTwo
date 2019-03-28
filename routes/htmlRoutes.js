@@ -3,13 +3,15 @@ var db = require("../models");
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
-      res.render("index")        
-   });
+    res.render("index");
+  });
   // Load example page and pass in an example by id
-  app.get("/matches", function(req, res) {
+  app.get("/matches/:age/:zipcode/:gender", function(req, res) {
     // edit the checking here
-    db.Example.findAll({ where: { id: req.params.id } }).then(function(dbMatch) {
-      res.render("result",{
+    db.Example.findAll({ where: { id: req.params.id } }).then(function(
+      dbMatch
+    ) {
+      res.render("matches", {
         results: dbMatch
       });
     });

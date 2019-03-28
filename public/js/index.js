@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 
 
 
@@ -79,3 +81,4 @@ var userformSubmit = function (event) {
 $submitBtn.on("click", userformSubmit);
 
 });
+>>>>>>> 6cddb0e35987b3122b04e383b70f2a8abdbf6ff4
