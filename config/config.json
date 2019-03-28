@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "root",
-    "password": "3anofjnono",
-    "database": "exampledb",
+    "password": "Learn2code$",
+    "database": "friendfinderdb",
     "host": "localhost",
     "dialect": "mysql"
   },
