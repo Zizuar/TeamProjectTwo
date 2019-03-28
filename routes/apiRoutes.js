@@ -1,21 +1,27 @@
 var db = require("../models");
 
 module.exports = function(app) {
- // Load index page
- app.get("/", function(req, res) {
-     res.render("index")
+  // Get all examples
+  // app.get("/api/examples", function(req, res) {
+    
+    
+  //   db.Example.findAll({}).then(function(dbExamples) {
+  //     res.json(dbExamples);
+  //   });
+  // });
+
+  
+
+  // Create a new example
+  app.post("/api/match", function(req, res) {
+    db.Friend.create(req.body).then(function(dbmatchfinder) {
+      res.json(dbmatchfinder);
+  // app.get("/api/users/:age", function(req, res) {
+  //   // db.Example.findAll({where: { [Example.age]: [req.params.age+ 5,req.params.age- 5] }}).then(function(dbExamples) {
+  //   //   res.json(dbExamples);
+  //   // });
+  //   res.json({test})
+  // });
+    });
   });
- // Load example page and pass in an example by id
- app.get("/matches/:age/:zipcode/:gender", function(req, res) {
-   // edit the checking here
-   db.Example.findAll({ where: { id: req.params.id } }).then(function(dbMatch) {
-     res.render("matches",{
-       results: dbMatch
-     });
-   });
- });
- // Render 404 page for any unmatched routes
- app.get("*", function(req, res) {
-   res.render("404");
- });
-};
+}
