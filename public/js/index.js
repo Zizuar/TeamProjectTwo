@@ -14,15 +14,16 @@ var $submitBtn = $("#submitBtn");
   $('.modal').modal();
   $('.sidenav').sidenav();
 
-var API = {
-  createAccount: function (user) {
-    return $.ajax({
-      type: "POST",
-      url: "api/match",
-      data: JSON.stringify(user)
-    });
-  },
-}
+// var API = {
+//   createAccount: function () {
+//     return $.ajax({
+//       type: "POST",
+//       url: "/api/match",
+//       data: JSON.stringify()
+//     });
+//   },
+// }
+
 
 var userformSubmit = function (event) {
   event.preventDefault();
@@ -39,14 +40,9 @@ console.log(user);
     return M.toast({html: 'Please put your info!', classes: 'rounded'})
   }
   
-  API.createAccount(user).then(function () { 
-    // window.location.href="/*" 
-    console.log(user.gender);
-    console.log(user.name);
-    console.log(user.email);
-    console.log(user.password);
-    console.log(user.zipCode);
-    console.log(user.age);
+  $.post("/api/match", user, function (data)  { 
+    window.location.href="/match" 
+    console.log(data);
   });
 
   // $genderPreference.val(" ");
