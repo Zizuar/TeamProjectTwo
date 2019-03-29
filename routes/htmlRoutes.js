@@ -8,8 +8,8 @@ module.exports = function (app) {
   // Load example page and pass in an example by id
   app.get("/match/:age/:zipcode/:gender", function (req, res) {
     // edit the checking here
-    db.Example.findAll({ where: { id: req.params.id } }).then(function (dbMatch) {
-      res.render("matches", {
+    db.Match.findAll({ where: { id: req.params.id } }).then(function (dbMatch) {
+      res.render("match", {
         results: dbMatch
       });
     });
