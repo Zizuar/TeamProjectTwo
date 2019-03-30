@@ -1,5 +1,5 @@
-import { Match as _Match } from "../models";
-
+// import { Match as _Match } from "../models";
+var db = require("../models");
 module.exports = function(app) {
   // Get all examples
   app.get("/api/match", function(req, res) { 
