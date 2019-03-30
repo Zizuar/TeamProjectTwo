@@ -8,10 +8,13 @@ module.exports = function(app) {
         gender: req.params.genderPreference,
         age: {
           $between: [req.params.age - 5, req.params.age + 5]
+        },
+        zip: {
+          $between: [req.params.zip - 50, req.params.zip +50]
         }
       }
     }).then(function(dbMatches) {
-      res.json(dbMatches);
+      res.render(dbMatches);
     });
   });
 
