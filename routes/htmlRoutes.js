@@ -5,7 +5,6 @@ module.exports = function (app) {
   app.get("/", function (req, res) {
     res.render("index");
   });
-  // Load example page and pass in an example by id
   app.get("/match/:age/:zipcode/:gender", function (req, res) {
     // edit the checking here
     db.Match.findAll({ where: { id: req.params.id } }).then(function (dbMatch) {

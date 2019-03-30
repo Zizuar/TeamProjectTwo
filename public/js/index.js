@@ -1,4 +1,3 @@
-
 // Get references to page elements
 $(document).ready(function() {
 var $genderPreference = $("#gender");
@@ -57,3 +56,6 @@ $submitBtn.on("click", userformSubmit);
 
 });
 
+  $submitBtn.on("click", userformSubmit);
+
+});

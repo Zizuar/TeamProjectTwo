@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "root",
-    "password": "3anofjnono",
-    "database": "friendfinderdb",
+    "password": "sfc77802",
+    "database": "matchfinderdb",
     "host": "localhost",
     "dialect": "mysql"
   },

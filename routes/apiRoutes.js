@@ -1,9 +1,16 @@
-var db = require("../models");
+import { Match as _Match } from "../models";
 
 module.exports = function(app) {
   // Get all examples
   app.get("/api/match", function(req, res) { 
-    db.Match.findAll({}).then(function(dbMatches) {
+    db.Match.findAll({
+      where: {
+        gender: req.params.genderPreference,
+        age: {
+          $between: [req.params.age - 5, req.params.age + 5]
+        }
+      }
+    }).then(function(dbMatches) {
       res.json(dbMatches);
     });
   });
@@ -17,6 +24,7 @@ module.exports = function(app) {
       email: req.body.email,
       password: req.body.password,
       zip: req.body.zipCode,
+      preference: req.body.genderPreference
     }).then(function(dbMatch) {
       res.json(dbMatch);
   // app.get("/api/users/:age", function(req, res) {
