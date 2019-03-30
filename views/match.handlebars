@@ -1,26 +1,26 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-  <meta charset="utf-8">
-  {{!-- animate --}}
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
-  {{!-- font --}}
-  <link href="https://fonts.googleapis.com/css?family=Arapey" rel="stylesheet">
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <!-- Compiled and minified CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
-  <!-- Compiled and minified JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  
-  <link rel="stylesheet" href="/styles/styles.css" media="screen" title="no title" charset="utf-8">
-  <title>Home Page</title>
-</head>
-
-<body>
-  {{{body}}}
-  <script src="/js/index.js"></script>
-</body>
-
-</html>
+<ul class="">
+  {{!-- <li>{{this.name}}</li>
+  <li>{{this.age}}</li>
+  <li>{{this.zipCode}}</li>
+  <li>{{this.gender}}</li> --}}
+  <div class="row">
+  {{#each results}}
+    <div class="col s3">
+      <div class="card">
+        <div class="card-image">
+          <img src="https://cdn.cnn.com/cnnnext/dam/assets/161201115958-68-year-in-pictures-2016-restricted-super-169.jpg">
+          <span class="card-title">{{this.name}}</span>
+        </div>
+        <div class="card-content">
+          <p>Age: {{this.age}}</p>
+          <p>Zipcode: {{this.zipcode}}</p>
+           <p>Email: {{this.email}}</p>
+        </div>
+        <div class="card-action">
+          <a href="#">This is a link</a>
+        </div>
+      </div>
+    </div>
+  {{/each}}
+</ul>
+  </div>

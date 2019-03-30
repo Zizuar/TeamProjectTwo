@@ -7,7 +7,7 @@ var $email = $("#email");
 var $password = $("#password");
 var $age = $("#age");
 var $zipCode = $("#zipCode");
-var $submitBtn = $("#submitBtn");
+var $submitBtn = $("#btnSubmit");
 
   $('select').formSelect();
   $('input#input_text, textarea#textarea2').characterCounter();

@@ -62,17 +62,17 @@
             <div class="input-field col s4">
               <select id="gender" class="validate" required="required">
                 <option value="" disabled selected>Gender</option>
-                <option value="1">Male </option>
-                <option value="2">Female</option>
-                
+                <option value="M">Male </option>
+                <option value="F">Female</option>
+
               </select>
               <label>Your Gender</label>
             </div>
             <div class="input-field col s4">
               <select id="genderPreference" class="validate" required="required">
                 <option value="" disabled selected>Gender</option>
-                <option value="1">Male</option>
-                <option value="2">Female </option> 
+                <option value="M">Male</option>
+                <option value="F">Female </option>
               </select>
               <label>Gender Preference</label>
             </div>
@@ -153,7 +153,7 @@
             </div>
             <div class="row">
               <div action="#">
-                <div class="col s6 file-field input-field">
+                {{!-- <div class="col s6 file-field input-field">
                   <div class="btn uploadBtn">
                     <span>Upload</span>
                     <input type="file">
@@ -161,7 +161,10 @@
                   <div class="file-path-wrapper">
                     <input class="file-path validate" type="text" placeholder="Photo">
                   </div>
-                </div>
+                </div> --}}
+                <form id="frmUploader" enctype="multipart/form-data" action="api/Upload/" method="post">
+                  <input type="file" name="imgUploader" multiple />
+                  
               </div>
 
               <form class="col s6">
@@ -173,8 +176,10 @@
                 </div>
             </div>
             <div class="modal-footer">
-              <button class="btn waves-effect waves-light submitBtn" id="submitBtn" type="submit" name="action">Submit
+              <input type="submit" name="submit" id="btnSubmit" value="Submit"/>
+              {{!-- <button class="btn waves-effect waves-light submitBtn" id="submitBtn" type="submit" name="action">Submit --}}
             </div>
+      </form>
       </form>
     </div>
   </div>

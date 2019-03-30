@@ -1,23 +1,31 @@
 var db = require("../models");
 module.exports = function(app) {
   // Get all examples
-  app.get("/match/:age/:gender/:zip", function(req, res) { 
+  app.get("/match/:age/:preference/:zip", function(req, res) { 
     db.Match.findAll({
       where: {
         gender: req.params.preference,
         age: {
-          $between: [req.params.age - 5, req.params.age + 5]
+          $between: [parseInt(req.params.age) - 5,parseInt(req.params.age) + 5]
         },
         zip: {
-          $between: [req.params.zip - 50, req.params.zip +50]
+          $between: [parseInt(req.params.zip) - 50, parseInt(req.params.zip) + 50]
         }
       }
     }).then(function(dbMatches) {
+      const matchesArr = dbMatches.map(match => {
+        return {age: match.age,
+        zipcode: match.zip,
+        gender: match.gender,
+        name: match.name,
+        email: match.email
+        }
+      })
       res.render("match", {
-        results: dbMatches
+        results: matchesArr
         
       });
-      console.log(dbMatches);
+      
     });
   });
 
