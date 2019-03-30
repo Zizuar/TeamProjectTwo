@@ -7,6 +7,9 @@ module.exports = function(app) {
         gender: req.params.preference,
         age: {
           $between: [req.params.age - 5, req.params.age + 5]
+        },
+        zip: {
+          $between: [req.params.zip - 50, req.params.zip +50]
         }
       }
     }).then(function(dbMatches) {
