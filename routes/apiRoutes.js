@@ -9,13 +9,12 @@ module.exports = function(app) {
           $between: [req.params.age - 5, req.params.age + 5]
         },
         zip: {
-          $between: [req.params.zip - 50, req.params.zip +50]
+          $between: [req.params.zip - 50, req.params.zip + 50]
         }
       }
     }).then(function(dbMatches) {
       res.render("match", {
         results: dbMatches
-        
       });
       console.log(dbMatches);
     });
