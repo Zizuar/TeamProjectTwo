@@ -5,7 +5,7 @@
   <div class="navBar">
     <nav class="transparent z-depth-0 animated slideInDown">
       <div class="nav-wrapper ">
-        <a href="#!" class="brand-logo">Meet</a>
+        <a href="#!" class="brand-logo">MEET</a>
         <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
           <li><a href="sass.html">Sass</a></li>
@@ -59,22 +59,29 @@
 
           </div>
           <div class="row">
-            <div class="input-field col s6">
+            <div class="input-field col s4">
               <select id="gender" class="validate" required="required">
-                <option value="" disabled selected>Choose gender</option>
-                <option value="1">Male looking for female</option>
-                <option value="2">Female looking for male</option>
-                <option value="3">Male looking for male</option>
-                <option value="4">Female looking for female</option>
+                <option value="" disabled selected>gender</option>
+                <option value="1">Male </option>
+                <option value="2">Female</option>
+                
               </select>
-              <label>Gender</label>
+              <label>Your Gender</label>
+            </div>
+            <div class="input-field col s4">
+              <select id="genderPreference" class="validate" required="required">
+                <option value="" disabled selected>gender</option>
+                <option value="1">Male</option>
+                <option value="2">Female </option> 
+              </select>
+              <label>Gender Preference</label>
             </div>
             {{!--  --}}
             {{!-- age --}}
-            <div class="col s6">
+            <div class="col s4">
               <label>Select your age.</label>
               <select class="browser-default validate" id="age" required="required">
-                <option value="" disabled selected>Choose your age</option>
+                <option value="" disabled selected> age</option>
                 <option value="18">18</option>
                 <option value="19">19</option>
                 <option value="20">20</option>

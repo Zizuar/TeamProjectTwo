@@ -1,4 +1,4 @@
-export default function (sequelize, DataTypes) {
+ module.exports = function (sequelize, DataTypes) {
   const Match = sequelize.define("Match", {
     name: DataTypes.STRING,
     photo: DataTypes.STRING,

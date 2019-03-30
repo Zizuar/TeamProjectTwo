@@ -1,6 +1,7 @@
 // Get references to page elements
 $(document).ready(function() {
-var $genderPreference = $("#gender");
+var $preference = $("#genderPreference");
+var $userGender = $("#gender");
 var $firstName = $("#first_name");
 var $email = $("#email");
 var $password = $("#password");
@@ -27,7 +28,8 @@ var $submitBtn = $("#submitBtn");
 var userformSubmit = function (event) {
   event.preventDefault();
   var user = {
-    gender: $genderPreference.val(),
+    gender: $userGender.val(),
+    preference: $preference.val(),
     name: $firstName.val(),
     email: $email.val(),
     password: $password.val(),
@@ -35,7 +37,7 @@ var userformSubmit = function (event) {
     age: $age.val()
   };
 console.log(user);
-  if (user.gender === null || user.age === null || user.name === " " || user.email === " " || user.password === " " || user.zipCode == " "){
+  if (user.gender === null || user.age === null || user.preference === null || user.name === " " || user.email === " " || user.password === " " || user.zipCode == " "){
     return M.toast({html: 'Please put your info!', classes: 'rounded'})
   }
   
@@ -53,9 +55,5 @@ console.log(user);
 };
 
 $submitBtn.on("click", userformSubmit);
-
-});
-
-  $submitBtn.on("click", userformSubmit);
 
 });
