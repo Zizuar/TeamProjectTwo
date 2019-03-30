@@ -1,11 +1,10 @@
-// import { Match as _Match } from "../models";
 var db = require("../models");
 module.exports = function(app) {
   // Get all examples
-  app.get("/api/match", function(req, res) { 
+  app.get("/match/:age/:gender/:zip", function(req, res) { 
     db.Match.findAll({
       where: {
-        gender: req.params.genderPreference,
+        gender: req.params.preference,
         age: {
           $between: [req.params.age - 5, req.params.age + 5]
         },
@@ -14,7 +13,11 @@ module.exports = function(app) {
         }
       }
     }).then(function(dbMatches) {
-      res.render(dbMatches);
+      res.render("match", {
+        results: dbMatches
+        
+      });
+      console.log(dbMatches);
     });
   });
 
@@ -27,15 +30,9 @@ module.exports = function(app) {
       email: req.body.email,
       password: req.body.password,
       zip: req.body.zipCode,
-      preference: req.body.genderPreference
+      preference: req.body.preference
     }).then(function(dbMatch) {
       res.json(dbMatch);
-  // app.get("/api/users/:age", function(req, res) {
-  //   // db.Example.findAll({where: { [Example.age]: [req.params.age+ 5,req.params.age- 5] }}).then(function(dbExamples) {
-  //   //   res.json(dbExamples);
-  //   // });
-  //   res.json({test})
-  // });
     });
   });
 }
