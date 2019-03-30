@@ -11,7 +11,7 @@ export default function (sequelize, DataTypes) {
     created_at: DataTypes.DATE,
     // eslint-disable-next-line camelcase
     last_login: DataTypes.DATE,
-    preference: DataTypes.INTEGER,
+    preference: DataTypes.ENUM("M", "F"),
   });
   return Match;
 }
