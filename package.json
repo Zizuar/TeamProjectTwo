@@ -1,6 +1,6 @@
 {
-  "name": "node-handlebars-boilerplate",
-  "version": "1.0.0",
+  "name": "team-2-project-date-match",
+  "version": "1.2.0",
   "description": "Project 2 Starter",
   "main": "server.js",
   "scripts": {
@@ -15,8 +15,7 @@
     "express": "^4.16.3",
     "express-handlebars": "^3.0.0",
     "mysql2": "^1.5.3",
-    "sequelize": "^4.38.0",
-    "util": "^0.11.1"
+    "sequelize": "^4.38.0"
   },
   "devDependencies": {
     "chai": "^4.1.2",
@@ -26,5 +25,24 @@
     "eslint-plugin-prettier": "^2.6.2",
     "mocha": "^5.2.0",
     "prettier": "^1.13.7"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zizuar/TeamProjectTwo.git"
+  },
+  "keywords": [
+    "projecttwo",
+    "sql",
+    "sequelize",
+    "date",
+    "match"
+  ],
+  "author": "Sabrina, Preston, Donald",
+  "bugs": {
+    "url": "https://github.com/Zizuar/TeamProjectTwo/issues"
+  },
+  "homepage": "https://github.com/Zizuar/TeamProjectTwo#readme"
 }

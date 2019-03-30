@@ -1,26 +1,30 @@
 import { Match as _Match } from "../models";
 
-export default function (app) {
-  app.get("/api/examples", function(_req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.json(dbExamples);
+module.exports = function(app) {
+  // Get all examples
+  app.get("/api/match", function(req, res) { 
+    db.Match.findAll({}).then(function(dbMatches) {
+      res.json(dbMatches);
     });
   });
-  app.post("/api/match", function (req, res) {
-    _Match.create(req.body).then(function (dbmatchfinder) {
-      res.json(dbmatchfinder);
-      app.get("/api/users/:age", function (req, res) {
-        Match.findAll({
-          where: {
-            gender: req.params.genderPreference,
-            age: {
-              $between: [req.params.age - 5, req.params.age + 5]
-            }
-          }
-        }).then(function (result) {
-          return res.json(result);
-        });
-      })
+
+  // Create a new example
+  app.post("/api/match", function(req, res) {
+    db.Match.create({
+      age: req.body.age,
+      gender: req.body.gender,
+      name: req.body.name,
+      email: req.body.email,
+      password: req.body.password,
+      zip: req.body.zipCode,
+    }).then(function(dbMatch) {
+      res.json(dbMatch);
+  // app.get("/api/users/:age", function(req, res) {
+  //   // db.Example.findAll({where: { [Example.age]: [req.params.age+ 5,req.params.age- 5] }}).then(function(dbExamples) {
+  //   //   res.json(dbExamples);
+  //   // });
+  //   res.json({test})
+  // });
     });
   });
 }
