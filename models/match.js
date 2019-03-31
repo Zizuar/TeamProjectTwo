@@ -7,6 +7,7 @@
     zip: DataTypes.MEDIUMINT,
     gender: DataTypes.ENUM("M", "F"),
     password: DataTypes.STRING,
+    avatar: DataTypes.STRING,
     // eslint-disable-next-line camelcase
     created_at: DataTypes.DATE,
     // eslint-disable-next-line camelcase

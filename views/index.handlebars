@@ -151,38 +151,38 @@
                 <label for="password">Password</label>
               </div>
             </div>
+
+
             <div class="row">
-              <div action="#">
-                {{!-- <div class="col s6 file-field input-field">
-                  <div class="btn uploadBtn">
-                    <span>Upload</span>
-                    <input type="file">
-                  </div>
-                  <div class="file-path-wrapper">
-                    <input class="file-path validate" type="text" placeholder="Photo">
-                  </div>
-                </div> --}}
-                <form id="frmUploader" enctype="multipart/form-data" action="api/Upload/" method="post">
-                  <input type="file" name="imgUploader" multiple />
-                  
+              <div class="col s3">
+
+
+                <div class="input-field">
+                  <input id="zipCode" type="text" maxlength="5">
+                  <label for="input_text">Zip code</label>
+                </div>
               </div>
 
-              <form class="col s6">
-                <div class="row">
-                  <div class="input-field col s6">
-                    <input id="zipCode" type="text" maxlength="5">
-                    <label for="input_text">Zip code</label>
-                  </div>
-                </div>
+
             </div>
             <div class="modal-footer">
-              <input type="submit" name="submit" id="btnSubmit" value="Submit"/>
-              {{!-- <button class="btn waves-effect waves-light submitBtn" id="submitBtn" type="submit" name="action">Submit --}}
-            </div>
+              {{!-- fb btn --}}
+              <fb scope="public_profile,email" onlogin="checkLoginState();">
+                <div class="fb-login-button" data-size="large" data-button-type="continue_with"
+                  data-auto-logout-link="true" data-use-continue-as="false"></div>
+              </fb>
+              {{!--  --}}
+              <div id="status">
+              </div>
+
+              {{!-- modal end --}}
+
       </form>
       </form>
+
     </div>
   </div>
+  <button class="btn waves-effect waves-light submitBtn" id="btnSubmit" type="submit" name="action">Submit
 </main>
 <footer class="page-footer">
   <div class="footer-copyright">
