@@ -1,5 +1,5 @@
-module.exports = function(sequelize, DataTypes) {
-  var Match = sequelize.define("Match", {
+ module.exports = function (sequelize, DataTypes) {
+  const Match = sequelize.define("Match", {
     name: DataTypes.STRING,
     photo: DataTypes.STRING,
     email: DataTypes.STRING,
@@ -7,10 +7,11 @@ module.exports = function(sequelize, DataTypes) {
     zip: DataTypes.MEDIUMINT,
     gender: DataTypes.ENUM("M", "F"),
     password: DataTypes.STRING,
+    // eslint-disable-next-line camelcase
     created_at: DataTypes.DATE,
+    // eslint-disable-next-line camelcase
     last_login: DataTypes.DATE,
-    preference: DataTypes.INTEGER,
-    facebookurl: DataTypes.STRING
+    preference: DataTypes.ENUM("M", "F"),
   });
   return Match;
-};
+}
