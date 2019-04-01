@@ -77,3 +77,9 @@ margin-top: 0px;
 .connect{
   font-size: 10px;
 }
+.contactBox{
+  margin-top: 80px;
+}
+.contactSubmit{
+  background-color: orange !important;
+}
