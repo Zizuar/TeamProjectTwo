@@ -1,5 +1,5 @@
 
-$(document).ready(function () {
+$(document).ready(function () { 
   var avatar = " ";
   var fbLink = " ";
   var $preference = $("#genderPreference");
@@ -55,19 +55,19 @@ $(document).ready(function () {
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));
   
-  function getLink() {
-    FB.api('/v3.2/me?fields=link', function (response) {
-      console.log(response);
-      fbLink = response.link;
-      console.log(fbLink);
-    });
-  }
+  // function getLink() {
+  //   FB.api('/v3.2/me?fields=link', function (response) {
+  //     console.log(response);
+  //     fbLink = response.link;
+  //     console.log(fbLink);
+  //   });
+  // }
   // Here we run a very simple test of the Graph API after login is
   // successful.  See statusChangeCallback() for when this call is made.
   function testAPI(fbID) {
     console.log('Welcome!  Fetching your information.... ');
     FB.api('/me', function (response) {
-      // console.log(response);
+      console.log(response);
       FB.api(
         '/' + fbID + '/picture?type=large',
         'GET',
@@ -77,9 +77,11 @@ $(document).ready(function () {
           console.log(response);
           avatar = response.data.url;
           console.log(avatar);
-          getLink();
+          // getLink();
         }
-      );    
+      );
+      fbLink = "https://www.facebook.com/search/top/?q=" + response.name.replace(" ","+") + "&epa=SEARCH_BOX"; 
+      console.log(fbLink);
       document.getElementById('status').innerHTML =
         'Thanks for logging in, ' + response.name + '!';
     });

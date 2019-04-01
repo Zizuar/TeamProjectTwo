@@ -5,8 +5,8 @@
         <a href="/" class="brand-logo">EROS</a>
         <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
-          <li><a href="sass.html" class="contact">Setting</a></li>
-          <li><a href="sass.html" class="contact">Contact Us</a></li>
+          <li><a href="#!" class="contact">Setting</a></li>
+          <li><a href="/contact" class="contact">Contact Us</a></li>
         </ul>
       </div>
     </nav>
@@ -14,7 +14,8 @@
 </header>
 
 <ul class="sidenav" id="mobile-demo">
-  <li><a href="sass.html">Contact Us</a></li>
+  <li><a href="#!" class="contact">Setting</a></li>
+  <li><a href="/contact">Contact Us</a></li>
 </ul>
 <main>
   <div class="container">
@@ -41,11 +42,21 @@
       </ul>
     </div>
   </div>
+  <!-- Modal Structure -->
+  <div id="modal2" class="modal">
+    <div class="modal-content">
+      <iframe class="i-frame" src="http://www.mcflysoftware.com/eros-privacy-policy.html"></iframe>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
+  </div>
 </main>
 <footer class="page-footer">
   <div class="footer-copyright">
     <div class="container">
       © 2019 Copyright
+      <a class="grey-text text-lighten-4 right modal-trigger" href="#modal2">Privacy Policy</a>
     </div>
   </div>
 </footer>
