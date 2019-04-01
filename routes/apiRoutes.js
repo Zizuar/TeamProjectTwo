@@ -18,8 +18,8 @@ module.exports = function(app) {
         zipcode: match.zip,
         gender: match.gender,
         name: match.name,
-        email: match.email,
-        avatar: match.avatar
+        avatar: match.avatar,
+        fbLink: match.fbLink
         }
       })
       res.render("match", {
@@ -40,7 +40,8 @@ module.exports = function(app) {
       password: req.body.password,
       zip: req.body.zipCode,
       preference: req.body.preference,
-      avatar: req.body.avatar
+      avatar: req.body.avatar,
+      fbLink: req.body.fbLink
     }).then(function(dbMatch) {
       res.json(dbMatch);
     });

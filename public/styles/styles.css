@@ -3,7 +3,23 @@
   line-height: 2.5;
 }
 body{
-  font-family: 'Arapey', serif;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  font-family: 'Cinzel', serif;
+}
+main {
+  flex: 1 0 auto;
+}
+.navBarmatch{
+  background-color: orange !important;
+}
+.brand-logo{
+  margin-left: 50px;
+  font-size: 40px !important;
+}
+.brand-logo:hover{
+  color:black;
 }
 .header{
   text-align: center;
@@ -14,6 +30,7 @@ body{
   justify-content:center
 }
 #modal1.modal{
+margin-top: 0px;
  max-height:100% !important;
  width: 450px;
  border-radius: 20px;
@@ -28,4 +45,21 @@ body{
 .backHome{
   margin-left: 420px;
   background-image: linear-gradient(to bottom right, red, yellow) !important;
+}
+.page-footer{
+  background-color: orange !important;
+  text-align: center;
+}
+.card-title{
+  color: black !important;
+}
+.facebook{
+  color: blue !important;
+  font-size: 20px;
+}
+.facebook:hover{
+  opacity: 0.6;
+}
+.contact{
+  margin-right: 30px;
 }

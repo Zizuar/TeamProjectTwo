@@ -1,27 +1,50 @@
-<ul class="">
-  {{!-- <li>{{this.name}}</li>
-  <li>{{this.age}}</li>
-  <li>{{this.zipCode}}</li>
-  <li>{{this.gender}}</li> --}}
-  <div class="row">
-  {{#each results}}
-    <div class="col s3">
-      <div class="card">
-        <div class="card-image">
-          <img src="https://scontent-dfw5-2.xx.fbcdn.net/v/t1.0-1/c0.40.160.160a/p160x160/31265617_10214597672030484_1078431268281249933_n.jpg?_nc_cat=107&_nc_ht=scontent-dfw5-2.xx&oh=2d032776eb40dff3b7ed11bb20480210&oe=5D3CD3EA">
-          <span class="card-title">{{this.name}}</span>
-        </div>
-        <div class="card-content">
-          <p>Age: {{this.age}}</p>
-          <p>Gender: {{this.gender}}</p>
-          <p>Zipcode: {{this.zipcode}}</p>
-           <p>Email: {{this.email}}</p>
-        </div>
-        <div class="card-action">
-          <a href={{this.fb}}>This is a link</a>
+<header>
+  <div class="navBar">
+    <nav class=" z-depth-0 navBarmatch ">
+      <div class="nav-wrapper ">
+        <a href="/" class="brand-logo">EROS</a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="sass.html" class="contact">Contact Us</a></li>
+
+        </ul>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<ul class="sidenav" id="mobile-demo">
+  <li><a href="sass.html">Contact Us</a></li>
+</ul>
+<main>
+  <div class="container">
+    <div class="row ">
+      {{#each results}}
+      <div class="col s2">
+        <div class="card">
+          <div class="card-image">
+            <img src="{{this.avatar}}">
+            <span class="card-title name">{{this.name}}</span>
+          </div>
+          <div class="card-content">
+            <p>Age: {{this.age}}</p>
+            <p>Gender: {{this.gender}}</p>
+            <p>Zipcode: {{this.zipcode}}</p>
+          </div>
+          <div class="card-action">
+            <a href="{{this.fbLink}}" class="facebook">FaceBook</a>
+          </div>
         </div>
       </div>
+      {{/each}}
+      </ul>
     </div>
-  {{/each}}
-</ul>
   </div>
+</main>
+<footer class="page-footer">
+  <div class="footer-copyright">
+    <div class="container">
+      © 2019 Copyright
+    </div>
+  </div>
+</footer>
