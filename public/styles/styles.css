@@ -15,7 +15,7 @@ main {
   background-color: orange !important;
 }
 .brand-logo{
-  margin-left: 50px;
+  margin-left: 220px;
   font-size: 40px !important;
 }
 .brand-logo:hover{
@@ -55,11 +55,14 @@ margin-top: 0px;
 }
 .facebook{
   color: blue !important;
-  font-size: 20px;
+  font-size: 15px;
 }
 .facebook:hover{
   opacity: 0.6;
 }
 .contact{
   margin-right: 30px;
+}
+.connect{
+  font-size: 10px;
 }
