@@ -1,80 +1,65 @@
 <link rel="stylesheet" href="/styles/index.css" media="screen" title="no title" charset="utf-8">
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 
 <header>
   <div class="navBar">
     <nav class="transparent z-depth-0 animated slideInDown">
       <div class="nav-wrapper ">
-        <a href="#!" class="brand-logo">MEET</a>
+        <a href="#!" class="brand-logo">EROS</a>
         <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
-          <li><a href="sass.html">Sass</a></li>
-          <li><a href="badges.html">Components</a></li>
-          <li><a href="collapsible.html">Javascript</a></li>
-          <li><a href="mobile.html">Mobile</a></li>
+          <li><a href="sass.html">Contact Us</a></li>
+          
         </ul>
       </div>
     </nav>
   </div>
 </header>
 
-
 <ul class="sidenav" id="mobile-demo">
-  <li><a href="sass.html">Sass</a></li>
-  <li><a href="badges.html">Components</a></li>
-  <li><a href="collapsible.html">Javascript</a></li>
-  <li><a href="mobile.html">Mobile</a></li>
+  <li><a href="sass.html">Contact Us</a></li>
 </ul>
 <main>
   <div class="container">
-    <div class="col">
-      <div class="row">
-
+    <div class="row">
+      <div class="col s12 intro animated slideInDown">
+        STOP TEXTING AND JUST MEET.
       </div>
-      <div class="row">
-        <div class="col s12 intro animated slideInDown">
-          <div class="row">
-            STOP TEXTING AND JUST MEET.
-          </div>
-
-
-        </div>
-      </div>
-      <!-- Modal Trigger -->
-      <div class="centered">
-        <a class="animated slideInDown waves-effect waves-light btn modal-trigger btn-large start-button"
-          href="#modal1">Sign up</a>
-      </div>
+    </div>
+    <!-- Modal Trigger -->
+    <div class="centered">
+      <a class="animated slideInDown waves-effect waves-light btn modal-trigger btn-large start-button"
+        href="#modal1">Sign up</a>
     </div>
 
     <!-- Modal Structure -->
-    {{!-- gender --}}
     <div id="modal1" class="modal">
       <form>
         <div class="modal-content">
+
           <div class="row">
             <div class="col s12 modalHeader">
               Get Started
             </div>
-
           </div>
+          {{!-- gender --}}
           <div class="row">
             <div class="input-field col s4">
               <select id="gender" class="validate" required="required">
                 <option value="" disabled selected>Gender</option>
-                <option value="1">Male </option>
-                <option value="2">Female</option>
-                
+                <option value="M">Male </option>
+                <option value="F">Female</option>
               </select>
               <label>Your Gender</label>
             </div>
+            {{!--  --}}
             <div class="input-field col s4">
               <select id="genderPreference" class="validate" required="required">
                 <option value="" disabled selected>Gender</option>
-                <option value="1">Male</option>
-                <option value="2">Female </option> 
+                <option value="M">Male</option>
+                <option value="F">Female </option>
               </select>
-              <label>Gender Preference</label>
+              <label>Preference</label>
             </div>
             {{!--  --}}
             {{!-- age --}}
@@ -129,11 +114,12 @@
             </div>
           </div>
           {{!--  --}}
+          {{!-- name --}}
           <div class="col s12">
             <div class="row">
               <div class="input-field col s6">
                 <i class="material-icons prefix">account_circle</i>
-                <input placeholder="First name" id="first_name" type="text" name="username" required="required">
+                <input  id="first_name" type="text" name="username" required="required">
                 <label for="first_name">First Name</label>
               </div>
               <div class="input-field col s6">
@@ -141,6 +127,8 @@
                 <label for="last_name">Last Name</label>
               </div>
             </div>
+            {{!--  --}}
+            {{!-- email --}}
             <div class="row">
               <div class="input-field col s6">
                 <input id="email" type="email" class="validate" required="required">
@@ -151,30 +139,36 @@
                 <label for="password">Password</label>
               </div>
             </div>
+            {{!--  --}}
             <div class="row">
-              <div action="#">
-                <div class="col s6 file-field input-field">
-                  <div class="btn uploadBtn">
-                    <span>Upload</span>
-                    <input type="file">
-                  </div>
-                  <div class="file-path-wrapper">
-                    <input class="file-path validate" type="text" placeholder="Photo">
-                  </div>
+              {{!-- zipcode --}}
+              <div class="col s3">
+                <div class="input-field">
+                  <input id="zipCode" type="text" maxlength="5">
+                  <label for="input_text">Zip code</label>
                 </div>
               </div>
-
-              <form class="col s6">
+              {{!--  --}}
+            </div>
+            {{!-- <div class="modal-footer"> --}}
+            <div class="row">
+              <div class="col s8">
+                <fb onlogin="checkLoginState();">
+                  <div class="fb-login-button" data-scope="public_profile,user_link" data-size="large"
+                    data-button-type="continue_with" data-auto-logout-link="true" data-use-continue-as="false"></div>
+                </fb>
                 <div class="row">
-                  <div class="input-field col s6">
-                    <input id="zipCode" type="text" maxlength="5">
-                    <label for="input_text">Zip code</label>
-                  </div>
+                  <div class="col s12">We'll NEVER post anything. Ever.</div>
                 </div>
+              </div>
+              <div class="col4">
+                <button class="btn waves-effect waves-light submitBtn" id="btnSubmit" type="submit" name="action">Submit
+                </button>
+              </div>
+              <div id="status">
+              </div>
             </div>
-            <div class="modal-footer">
-              <button class="btn waves-effect waves-light submitBtn" id="submitBtn" type="submit" name="action">Submit
-            </div>
+          </div>
       </form>
     </div>
   </div>
