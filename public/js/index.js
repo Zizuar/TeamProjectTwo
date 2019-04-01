@@ -42,7 +42,7 @@ console.log(user);
   }
   
   $.post("/api/match", user, function (data)  { 
-    window.location.href=`/match/${user.age}/${user.gender}/${user.zipCode}` 
+    window.location.href= `/match/${user.age}/${user.gender}/${user.zipCode}` 
     console.log(data);
   });
 
