@@ -35,6 +35,17 @@ margin-top: 0px;
  width: 450px;
  border-radius: 20px;
 }
+.i-frame{
+  border:none;
+  width: 100% !important;
+  height: 100% !important;
+}
+#modal2.modal{
+  margin-top: 0px;
+   max-height:100% !important;
+   width: 450px;
+   border-radius: 20px;
+  }
 .oops{
   font-size: 150px;
   margin-left: 300px;
